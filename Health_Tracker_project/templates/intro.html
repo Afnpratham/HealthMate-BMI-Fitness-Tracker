@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Tracker | Intro</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("{{ url_for('static', filename='intro.jpg') }}") no-repeat left center / cover;
+      font-family: "Poppins", sans-serif;
+      color: #e0f7ff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Slight overlay for readability */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 10, 30, 0.55);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      background: rgba(0, 0, 40, 0.5);
+      padding: 50px 70px;
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 25px rgba(0, 150, 255, 0.4);
+      max-width: 700px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #00c8ff;
+      text-shadow: 0 0 25px #0090ff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #d4f0ff;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 25px;
+      background: linear-gradient(90deg, #007bff, #00e0ff);
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px #00e0ff;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      color: #b0e6ff;
+      text-shadow: 0 0 10px #003366;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1>Welcome to <span style="color:#00e0ff;">Health Tracker</span></h1>
+    <p>“Your body is your most priceless possession. Take care of it.”<br />
+      Track your fitness, monitor your health, and receive personalized workout & diet plans tailored just for you.
+    </p>
+
+    <a href="{{ url_for('login') }}" class="btn">Login</a>
+    <a href="{{ url_for('register') }}" class="btn">Register</a>
+  </div>
+
+  <footer>
+    © 2025 Health Tracker. All Rights Reserved.
+  </footer>
+</body>
+</html>
